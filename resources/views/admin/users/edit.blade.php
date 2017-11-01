@@ -6,7 +6,9 @@
 @section('content')
 
     <h1>Edit Users</h1>
-    
+
+    <div class="row">
+
     <div class="col-sm-3">
 
         <img src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt="" class="img-responsive img-rounded">
@@ -55,7 +57,10 @@
     {!! Form::close() !!}
     
     </div>
+    </div>
+    <div class="row">
+        @include('includes.form_error')
 
-    @include('includes.form_error')
+    </div>
 
 @endsection
