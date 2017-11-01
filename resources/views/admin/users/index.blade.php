@@ -19,7 +19,7 @@
             </thead>
             <tbody>
 
-            @if($users)
+            @if(count($users) > 0)
 
                 @foreach($users as $user)
             <tr>
@@ -39,4 +39,4 @@
             </tbody>
         </table>
 
-    @stop
+@endsection
