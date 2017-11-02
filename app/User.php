@@ -26,10 +26,28 @@ class User extends Authenticatable
     public function role(){
 
         return $this->belongsTo('App\Role');
+
     }
     public function photo(){
 
         return $this->belongsTo('App\Photo');
     }
+
+    public function SetPasswordAttribute($password){
+
+        if(!empty($password)){
+            $this->attributes['password'] = bcrypt($password);
+        }
+    }
+
+    public function isAdmin(){
+
+        if($this->role->name == 'admin'){
+
+            return true;
+        }
+        return false;
+    }
+
 
 }
